@@ -1,11 +1,11 @@
 import foodImage from './food.jpg';
 
-function getContent() {
-    const h1 = document.createElement('h1');
+function getHome() {
+    const h2 = document.createElement('h2');
     const img = document.createElement('img');
     const p = document.createElement('p');
 
-    h1.textContent = 'Best Restaurant in Country';
+    h2.textContent = 'Welcome to Le Gourmet Delight';
 
     const myFoodImage = new Image();
     let src = myFoodImage.src;
@@ -22,11 +22,11 @@ function getContent() {
         img.setAttribute(imgAtt, imgAttributes[imgAtt]);
     }
 
-    p.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt rem consequuntur non tempora distinctio eius magnam. Pariatur, totam laudantium porro voluptatum ratione ipsa beatae modi molestias obcaecati accusamus! Sunt, doloribus!'
+    p.textContent = 'Experience the finest dining with our exquisite dishes and exceptional service.'
 
-    return { h1, img, p }
+    return { h2, img, p }
 }
 
-// console.log(getContent().img);
+// console.log(getHome().img);
 
-export { getContent };
+export { getHome };

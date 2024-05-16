@@ -1,21 +1,48 @@
-import { getContent } from './content.js';
+import { getHome } from './home.js';
+import { getMenu } from './menu.js';
+import { getContact } from './contact.js';
 
-const divContent = document.querySelector('#content');
-let { h1, img, p } = getContent();
-divContent.appendChild(h1);
-divContent.appendChild(img);
-divContent.appendChild(p);
+const homeBtn = document.querySelector('.home');
+const menuBtn = document.querySelector('.menu');
+const contactBtn = document.querySelector('.contact');
 
-// console.log(src1);
-// function insideContent() {
+homeBtn.addEventListener('click', () => {
+    const divContent = document.querySelector('#content');
 
-//     // const contents = {
-//     //     h1: content()
-//     // }
+    if (divContent) {
+        divContent.textContent = '';
+    }
 
+    const { h2, img, p } = getHome();
+    
+    divContent.appendChild(h2);
+    divContent.appendChild(img);
+    divContent.appendChild(p);
+})
+ 
+menuBtn.addEventListener('click', () => {
+    const divContent = document.querySelector('#content');
 
+    if (divContent) {
+        divContent.textContent = '';
+    }
 
-//     // divContent.appendChild(contents.h1);
+    const { h2, p } = getMenu();
+    
+    divContent.appendChild(h2);
+    divContent.appendChild(p);
+})
+ 
+contactBtn.addEventListener('click', () => {
+    const divContent = document.querySelector('#content');
 
-//     // return divContent;
-// }
+    if (divContent) {
+        divContent.textContent = '';
+    }
+
+    const { h2, p } = getContact();
+    
+    divContent.appendChild(h2);
+    divContent.appendChild(p);
+})
+ 

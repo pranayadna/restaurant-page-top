@@ -1,7 +1,8 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
 
-module.exports = {
+module.exports = merge(common, {
     mode: 'development',
     entry: './src/index.js',
     devtool: 'inline-source-map',
@@ -9,21 +10,9 @@ module.exports = {
         static: './dist',
         watchFiles: ['src/index.html'],
     },
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html'
         })
     ],
-    module: {
-        rules: [
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
-        ]
-    }
-};
+});
